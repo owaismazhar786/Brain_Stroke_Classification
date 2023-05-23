@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Stroke Prediction</title>
+    <!-- Import Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Stroke Prediction</h2>
+        <form action="/predict" method="POST">
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select class="form-control" name="gender" id="gender">
+                    <option value="0">Female</option>
+                    <option value="1">Male</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" name="age" id="age" required>
+            </div>
+            <div class="form-group">
+                <label for="hypertension">Hypertension:</label>
+                <select class="form-control" name="hypertension" id="hypertension">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="heart_disease">Heart Disease:</label>
+                <select class="form-control" name="heart_disease" id="heart_disease">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ever_married">Ever Married:</label>
+                <select class="form-control" name="ever_married" id="ever_married">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="work_type">Work Type:</label>
+                <select class="form-control" name="work_type" id="work_type">
+                    <option value="0">Private</option>
+                    <option value="1">Self-employed</option>
+                    <option value="2">Govt job</option>
+                    <option value="3">Children</option>
+                    <option value="4">Never Worked</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="residence_type">Residence Type:</label>
+                <select class="form-control" name="residence_type" id="residence_type">
+                    <option value="0">Rural</option>
+                    <option value="1">Urban</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="avg_glucose_level">Average Glucose Level:</label>
+                <input type="number" step="any" class="form-control" name="avg_glucose_level" id="avg_glucose_level" required>
+            </div>
+            <div class="form-group">
+                <label for="bmi">BMI:</label>
+                <input type="number" step="any" class="form-control" name="bmi" id="bmi" required>
+            </div>
+            <div class="form-group">
+                <label for="smoking_status">Smoking Status:</label>
+                <select class="form-control" name="smoking_status" id="smoking_status">
+                    <option value="0">Unknown</option>
+                    <option value="1">Never Smoked</option>
+                    <option value="2">Formerly Smoked</option>
+                    <option value="3">Smokes</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+    </div>
+
+    <!-- Import Bootstrap JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
