@@ -5,6 +5,47 @@
     <title>Stroke Prediction</title>
     <!-- Import Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            background-image: url("{{ url_for('static', filename='img4.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 100px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0069d9;
+        }
+    </style>
 </head>
 
 <body>
@@ -12,39 +53,39 @@
         <h2>Stroke Prediction</h2>
         <form action="/predict" method="POST">
             <div class="form-group">
-                <label for="gender">Gender:</label>
+                <label for="gender" title="Select the gender of the person">Gender:</label>
                 <select class="form-control" name="gender" id="gender">
                     <option value="0">Female</option>
                     <option value="1">Male</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="age">Age:</label>
+                <label for="age" title="Enter the age of the person">Age:</label>
                 <input type="number" class="form-control" name="age" id="age" required>
             </div>
             <div class="form-group">
-                <label for="hypertension">Hypertension:</label>
+                <label for="hypertension" title="Select if the person has hypertension">Hypertension:</label>
                 <select class="form-control" name="hypertension" id="hypertension">
                     <option value="0">No</option>
                     <option value="1">Yes</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="heart_disease">Heart Disease:</label>
+                <label for="heart_disease" title="Select if the person has heart disease">Heart Disease:</label>
                 <select class="form-control" name="heart_disease" id="heart_disease">
                     <option value="0">No</option>
                     <option value="1">Yes</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="ever_married">Ever Married:</label>
+                <label for="ever_married" title="Select if the person is ever married">Ever Married:</label>
                 <select class="form-control" name="ever_married" id="ever_married">
                     <option value="0">No</option>
                     <option value="1">Yes</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="work_type">Work Type:</label>
+                <label for="work_type" title="Select the type of work the person does">Work Type:</label>
                 <select class="form-control" name="work_type" id="work_type">
                     <option value="0">Private</option>
                     <option value="1">Self-employed</option>
@@ -54,22 +95,23 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="residence_type">Residence Type:</label>
+                <label for="residence_type" title="Select the type of residence">Residence Type:</label>
                 <select class="form-control" name="residence_type" id="residence_type">
                     <option value="0">Rural</option>
                     <option value="1">Urban</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="avg_glucose_level">Average Glucose Level:</label>
-                <input type="number" step="any" class="form-control" name="avg_glucose_level" id="avg_glucose_level" required>
+                <label for="avg_glucose_level" title="Enter the average glucose level">Average Glucose Level:</label>
+                <input type="number" step="any" class="form-control" name="avg_glucose_level" id="avg_glucose_level"
+                    required>
             </div>
             <div class="form-group">
-                <label for="bmi">BMI:</label>
+                <label for="bmi" title="Enter the BMI (Body Mass Index)">BMI:</label>
                 <input type="number" step="any" class="form-control" name="bmi" id="bmi" required>
             </div>
             <div class="form-group">
-                <label for="smoking_status">Smoking Status:</label>
+                <label for="smoking_status" title="Select the smoking status of the person">Smoking Status:</label>
                 <select class="form-control" name="smoking_status" id="smoking_status">
                     <option value="0">Unknown</option>
                     <option value="1">Never Smoked</option>
